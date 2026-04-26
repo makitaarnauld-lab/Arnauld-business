@@ -1,0 +1,339 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 1.2rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Drapeau Congo */
+        .congo-flag {
+            background: linear-gradient(90deg, #009543 0%, #009543 33%, #FBDE4A 33%, #FBDE4A 66%, #DC241F 66%, #DC241F 100%);
+            height: 6px;
+            width: 100%;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+        }
+
+        /* Titre défilant */
+        .marquee {
+            background: #0A2540;
+            color: white;
+            padding: 0.6rem 0;
+            border-radius: 40px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: defilement 22s linear infinite;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .marquee-content span {
+            margin: 0 30px;
+        }
+        @keyframes defilement {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #009543, #DC241F, #FBDE4A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.2rem;
+        }
+
+        .subtitle {
+            color: #475569;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        /* Grille principale */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            border-left: 4px solid #DC241F;
+            padding-left: 0.8rem;
+            margin-bottom: 1.2rem;
+            color: #0F172A;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: #334155;
+            font-size: 0.85rem;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #009543;
+            box-shadow: 0 0 0 3px rgba(0,149,67,0.1);
+        }
+        button {
+            background: #009543;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        button:hover {
+            background: #007a38;
+            transform: translateY(-1px);
+        }
+
+        /* Section tarifs */
+        .price-card {
+            background: #F0FDF4;
+            border-radius: 20px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #009543;
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+        .address-card {
+            background: #FFF7ED;
+            border-radius: 20px;
+            padding: 1rem;
+            border-left: 4px solid #DC241F;
+            margin-bottom: 1rem;
+        }
+        .offer-badge {
+            background: #FEF3C7;
+            border-radius: 20px;
+            padding: 0.7rem;
+            text-align: center;
+            font-weight: 600;
+            color: #92400E;
+            font-size: 0.85rem;
+        }
+
+        .message {
+            margin-top: 1rem;
+            padding: 0.6rem;
+            border-radius: 30px;
+            background: #ECFDF5;
+            color: #065F46;
+            font-size: 0.85rem;
+        }
+        .message.error {
+            background: #FEF2F2;
+            color: #991B1B;
+        }
+
+        /* Petit bouton admin en bas */
+        .admin-mini-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1E293B;
+            color: #94A3B8;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+        .admin-mini-btn:hover {
+            background: #2563EB;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* MODAL ADMIN */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 28px;
+            max-width: 1000px;
+            width: 95%;
+            padding: 1.5rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .hidden {
+            display: none;
+        }
+
+        /* Tableaux admin */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+        th {
+            text-align: left;
+            padding: 0.7rem 0.5rem;
+            background: #F8FAFC;
+            border-bottom: 2px solid #E2E8F0;
+        }
+        td {
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid #EFF3F6;
+        }
+        .btn-sm {
+            padding: 0.3rem 0.7rem;
+            font-size: 0.7rem;
+        }
+        .btn-secondary {
+            background: #F1F5F9;
+            color: #1E293B;
+        }
+        .btn-danger {
+            background: #DC241F;
+        }
+        .btn-danger:hover {
+            background: #B71C1A;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #009543, #007a38);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+        .filter-bar {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            flex-wrap: wrap;
+            background: #F9FAFB;
+            padding: 0.6rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+        .filter-bar input {
+            width: auto;
+            flex: 1;
+            min-width: 130px;
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+        .login-box {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .notification {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: #1E293B;
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 40px;
+            z-index: 1000;
+            animation: fadeIn 0.3s;
+            font-size: 0.85rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #5B6E8C;
+        }
+        @media (max-width: 750px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .modal-content { width: 95%; padding: 1rem; }
+        }
