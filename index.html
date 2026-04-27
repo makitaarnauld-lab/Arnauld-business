@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Arnauld MAKITA - RDV & Services</title>
+    <title>Arnauld MAKITA - RDV & Services en ligne</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000000">
@@ -24,7 +24,7 @@
     </div>
 
     <h1>📋 ARNAULD MAKITA</h1>
-    <div class="subtitle">Prenez rendez-vous en ligne • Livraison à Pointe-Noire & Brazzaville</div>
+    <div class="subtitle">Prenez rendez-vous en ligne • Livraison à Pointe-Noire;Brazzaville et Dolisie</div>
 
     <!-- Interface client -->
     <div id="clientInterface">
@@ -204,7 +204,8 @@ function envoyerEmail(e) {
   fetch("https://grafting-babied-felt-tip.ngrok-free.dev/send-email", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "ngrok-skip-browser-warning":"true"
     },
     body: JSON.stringify({
       email: document.getElementById("email").value
